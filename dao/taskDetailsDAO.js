@@ -22,7 +22,7 @@ const createTask = async (data) => {
     }
 }
 
-const updateTask = async (data) => {
+const updateTask = async (id,data) => {
     try {
         let updateOne =  await TaskDetails.update(data,{
             where:{
@@ -35,10 +35,9 @@ const updateTask = async (data) => {
     }
 }
 
-
-const deleteTask = async (data) => {
+const deleteTask = async (id) => {
     try {
-        let deleteOne =  await TaskDetails.destroy(data,{
+        let deleteOne =  await TaskDetails.destroy({
             where:{
                 task_id: id
             }

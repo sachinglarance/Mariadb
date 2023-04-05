@@ -31,7 +31,7 @@ app.get('/createTask', async (req, res) => {
     try {
       let taskId = req.query.taskId;
       let updateTask = {
-        task_name: "sachin",
+        task_name: "sachincharles",
       };
       const UpdateTask = await taskDetailsDAO.updateTask(taskId,updateTask);
       res.send({
@@ -64,7 +64,7 @@ app.get('/createTask', async (req, res) => {
   app.get('/getTaskbyId', async (req, res) => {
     try {
         let taskId = req.query.taskId;
-        const idTask = await taskDetailsDAO.deleteTask(taskId);
+        const idTask = await taskDetailsDAO.getTaskById(taskId);
         res.send({
           data : idTask,
           message: 'Task fetched successfully',

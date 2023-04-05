@@ -1,6 +1,6 @@
 const { Sequelize } = require("sequelize")
 
-const sequelize = new Sequelize('todo','root','root@12',{
+const sequelize = new Sequelize('todo_task','root','root@12',{
     dialect: 'mariadb',
     host: 'localhost'
 });
