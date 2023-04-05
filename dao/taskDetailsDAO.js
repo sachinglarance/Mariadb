@@ -1,16 +1,4 @@
-const { json } = require("body-parser");
 const TaskDetails = require("../module/task_details");
-
-// const createTask = async () => {
-//     try {
-//         const newOne = await TaskDetails.build(newTask);
-//         newOne.save();
-//         return JSON.parse(JSON.stringify(newOne));
-//     } catch (err) {
-//         console.log("Error: ", err);
-//         throw err;
-//     }
-// };
 
 const createTask = async (data) => {
   try {
@@ -21,11 +9,11 @@ const createTask = async (data) => {
   }
 };
 
-const updateTask = async (id, data) => {
+const updateTask = async (taskId, data) => {
   try {
     let updateOne = await TaskDetails.update({ task_name: data },{
         where: {
-          task_id: id,
+          task_id: taskId,
         },
     });
     return JSON.parse(JSON.stringify(updateOne));
@@ -34,11 +22,11 @@ const updateTask = async (id, data) => {
   }
 };
 
-const deleteTask = async (id) => {
+const deleteTask = async (taskId) => {
   try {
     let deleteOne = await TaskDetails.destroy({
       where: {
-        task_id: id,
+        task_id: taskId,
       },
     });
     return JSON.parse(JSON.stringify(deleteOne));

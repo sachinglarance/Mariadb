@@ -3,8 +3,6 @@ const express = require('express');
 const app = express();
 const port = 3000;
 
-app.use(express.json()); // middleware to parse request body as json
-
 app.get('/', (req, res) => {
   res.send('This is sachin');
 });
@@ -167,7 +165,7 @@ app.get("/getAllTasks", async (req, res) => {
         if (tasks) {
             response = {
                 code: 200,
-                message: "Task fetched succefully",
+                message: "Tasks fetched succefully",
                 data: tasks,
             }
         } else {
